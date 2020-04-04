@@ -1,0 +1,77 @@
+--------------- EJERCITACIÓN 1 --------------
+1. Qué es HTML, cuando fue creado, cuáles fueron las distintas versiones y cuál es la última?
+2. ¿Cuáles son los principios básicos que el W3C recomienda seguir para la creación de documentos con HTML?
+3. En las Especificaciones de HTML, ¿cuándo un elemento o atributo se considera desaprobado? ¿y obsoleto?
+4. Qué es el DTD y cuáles son los posibles DTDs contemplados en la especificación de HTML 4.01?
+5. Qué son los metadatos y cómo se especifican en HTML?
+
+1.HTML es el lenguaje de marcado principal de la World Wide Web. Este tipo de lenguaje se caracteriza por el uso de etiquetas, las cuales 
+ya se encuentran predefinidas. Su diferencia con los lenguajes de programación tradicionales es que estos últimos poseen funciones 
+aritméticas o variables. 
+HTML fue creado en 1990 y desde ese entonces pasó por diferentes versiones:
+  -HTML 3.0(1995): se simplifica la estructura del documento para agilizar su edición, donde la declaración explícita de los 
+  elementos body, html y head es opcional.
+  
+  -HTML 3.2(1997): incorporó los últimos avances de las páginas web desarrolladas hasta 1996, como applets de Java y texto que fluye 
+  alrededor de las imágenes.
+  
+  -HTML 4.01(1997): desde la publicación de HTML 4.01, el W3C se centró en el desarrollo del estándar XHTML. Por este motivo, en 2004, las 
+  empresas Apple, Mozilla y Opera decidieron organizarse en una nueva asociación llamada WHATWG. Debido a la fuerza de las empresas que 
+  forman el grupo WHATWG y a la publicación de los borradores de HTML 5.0, en marzo de 2007 el W3C decidió retomar la actividad 
+  estandarizadora de HTML, dentro del cual decidió integrar el XHTML.
+  
+  -HTML 5(2014): la principal ventaje del nuevo estándar fue la posibilidad de agregar audio y video sin necesidad de usar flash o algún 
+  otro repreductor multimedia mediante las etiquetas <audio> y <video>. También incluye la geolocalización de usuarios (debe usarse
+  debidamente) y la creación de figuras 2D con la etiqueta <canvas>. 
+  Otro aspecto muy importante de HTML 5 su alta accesibilidad, es decir, se puede acceder desde múltiples dispositivos como computadoras
+  personales, celulares y tablets.
+
+2.Los principios básicos para la creación de un documento HTML es que el mismo debe tener el siguiente formato:
+
+  <!DOCTYPE HTML>
+  <HTML>
+      <HEAD>
+      
+      </HEAD>
+      <BODY>
+      
+      </BODY>
+  </HTML>
+
+3.Elementos desaprobados y obsoletos.
+  Un elemento es considerado desaprobado cuando el mismo es anticuado debido al surgimiento de estructuras nuevas y corre peligro de
+  pasar a ser obsoleto en una futura versión de HTML.
+  Un elemento es considerado obsoleto cuando ya no se le dará soporte y ya no es definido en la especificación. 
+  
+4.Una DTD es una declaración del tipo de documento, incluye los elementos que se permiten y sus atributos. La misma se ubica en la 
+primera línea del documento HTML. HTML 4.01 permite declararla de dos formas:
+
+  -Declaración transitoria:
+      <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+      "http://www.w3.org/TR/html4/loose.dtd">
+      
+  -Declaración estricta:
+      <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+      "http://www.w3.org/TR/html4/strict.dtd">
+      
+5. Los Metadatos son elementos HTML que muestran información sobre la propia página web que los contiene. Dicha información es utilizada
+por los motores de búsqueda.Por lo general, la especificación de metadatos implica dos pasos:
+  
+  1-Declaración de una propiedad y de un valor para esta propiedad. Esto puede hacerse de dos maneras:
+      Desde dentro de un documento, por medio del elemento META.
+          <META name="Author" content="Dave Raggett"> <!--Especificar el autor de un documento-->
+      Desde fuera de un documento, vinculando los metadatos por medio del elemento LINK.
+          
+  2-Referencia a un perfil en el que se definen la propiedad y sus valores legales. Para designar un perfil, se usa el atributo profile 
+  del elemento HEAD. El valor del atributo profile es un URI
+  
+
+  
+  
+
+      
+      
+
+
+  
+  
