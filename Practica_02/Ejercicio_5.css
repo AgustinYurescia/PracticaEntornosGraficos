@@ -1,0 +1,9 @@
+h1, h2, h3, h4, h5, h6 { color: red; }
+div p [href] { color: black; }
+div#ultimo ul { color: yellow; }
+div#ultimo ul:link { color: blue; text-decoration:none;}
+#importante { color: green; }
+h1#importante, h2#importante, h3#importante, h4#importante, h5#importante, h6#importante { color: red; }
+h1[tittle] { color: blue; }
+ul:link { color: blue; text-decoration:none; }
+ul:visited { color: violet; text-decoration:none; }
