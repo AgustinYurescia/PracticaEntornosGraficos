@@ -33,10 +33,24 @@
 </body>
   <?php
     include("conexion.inc");
+    $Cant_por_Pag = 10;
+    $pagina = isset ( $_GET['pagina']) ? $_GET['pagina'] : null ;
+    if (!$pagina) {
+        $inicio = 0;
+        $pagina=1;
+    }
+    else {
+        $inicio = ($pagina - 1) * $Cant_por_Pag;
+    }
     $sentenciaSQL = "SELECT * FROM ciudades";
     $rta =  mysqli_query($link, $sentenciaSQL) or die (mysqli_error($link));
+    $total_registros=mysqli_num_rows($rta);
+    $total_paginas = ceil($total_registros/ $Cant_por_Pag);
+    $sentenciaSQL = "SELECT * FROM ciudades"." limit ". $inicio.",".$Cant_por_Pag;
+    $rta = mysqli_query($link, $sentenciaSQL) or die (mysqli_error($link));
+    $total_registros=mysqli_num_rows($rta);
   ?>
-  <h2>Home-Listado</h2>
+  <h2>Listado Paginado</h2>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -61,6 +75,18 @@
         mysqli_free_result($rta);
         mysqli_close($link);
       ?>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+  <?php
+    if ($total_paginas > 1){
+    for ($i=1;$i<=$total_paginas;$i++){
+        if ($pagina == $i)
+            echo $pagina . " ";
+        else
+            echo "<a href='Listado_pag.php?pagina=" . $i ."'>" . $i . "</a> ";}}
+  ?>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p align="center"><a href="home.php">Volver al menu</a></p>
+</body>
 </html>

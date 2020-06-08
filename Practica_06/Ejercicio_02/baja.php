@@ -8,13 +8,16 @@
     <title>Menu</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="home.php">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="listado_pag.php">Listado Paginado</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="alta.html">Alta <span class="sr-only">(current)</span></a>
             </li>
@@ -26,12 +29,13 @@
             </li>
           </ul>
         </div>
-    </nav>
+  </nav>
     <?php
       include("conexion.inc");
       $sentenciaSQL = "SELECT * FROM ciudades";
       $rta =  mysqli_query($link, $sentenciaSQL) or die (mysqli_error($link));
     ?>
+    <h2>Baja de ciudades</h2>
     <form action="realizar_baja.php" method="POST">
       <div class='form-group'>
         <div class='form-group mx-sm-3 mb-2'>
@@ -42,7 +46,8 @@
           while ($r = mysqli_fetch_array($rta)){
             echo("<option value=".$r['id'].">".$r['ciudad']."</option>");
           }  
-        mysqli_free_result($rta);        
+        mysqli_free_result($rta);
+        mysqli_close($link);        
         ?>
           </select>
         </div>

@@ -16,6 +16,9 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
+              <a class="nav-link" href="listado_pag.php">Listado Paginado</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="alta.html">Alta <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
@@ -38,6 +41,7 @@
       $sentenciaSQL = "SELECT * FROM ciudades";
       $rta =  mysqli_query($link, $sentenciaSQL) or die (mysqli_error($link));
     ?>
+    <h2>Formulario de Modificación</h2>
     <form action="modificacion.php" method="POST">
       <div class='form-group'>
         <div class='form-group mx-sm-3 mb-2'>
@@ -98,7 +102,8 @@
           </form>
         </div>");
         mysqli_free_result($rta);
-       } 
+       }
+       mysqli_close($link); 
        ?>
 </body>
 </html>
