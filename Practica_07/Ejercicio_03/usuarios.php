@@ -41,6 +41,7 @@
                 <input type="text" class="form-control" id="usuario_nuevo" name="usuario_nuevo" placeholder="Nuevo usuario">
             </div>
             <button type="submit" class="btn btn-primary mb-2">Ingresar</button>
+        </form>
     </div>
 </body>
 </html>
