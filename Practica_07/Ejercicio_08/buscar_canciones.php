@@ -13,7 +13,6 @@
         $cancion = $_POST['cancion'];
         $sentenciaSQL = "SELECT * FROM buscador WHERE cancion LIKE '%$cancion%'";
         $rta =  mysqli_query($link, $sentenciaSQL) or die (mysqli_error($link));
-        $canciones =  mysqli_fetch_array($rta);
         if (mysqli_num_rows($rta) == "0"){
             echo'
                 <div class="form-group mx-sm-3 mb-2">
